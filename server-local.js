@@ -1,13 +1,17 @@
-const io = require("socket.io")(3001, {
+const { Server } = require('socket.io')
+const http = require('http')
+
+// In-memory storage for documents
+const documents = new Map()
+const defaultValue = ""
+
+const server = http.createServer()
+const io = new Server(server, {
   cors: {
     origin: "http://localhost:3000",
     methods: ["GET", "POST"],
   },
 })
-
-// In-memory storage for documents
-const documents = new Map()
-const defaultValue = ""
 
 io.on("connection", socket => {
   console.log("User connected:", socket.id)
@@ -51,4 +55,7 @@ function saveDocument(id, data) {
   }
 }
 
-console.log("Server running on port 3001")
+const PORT = process.env.PORT || 3001
+server.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
+})

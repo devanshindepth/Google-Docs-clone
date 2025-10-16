@@ -22,7 +22,13 @@ export default function TextEditor() {
   const [isConnected, setIsConnected] = useState(false)
 
   useEffect(() => {
-    const s = io("http://localhost:3001")
+    const socketUrl = process.env.NODE_ENV === 'production' 
+      ? window.location.origin 
+      : "http://localhost:3001"
+    
+    const s = io(socketUrl, {
+      path: process.env.NODE_ENV === 'production' ? '/api/socket' : '/socket.io'
+    })
     setSocket(s)
 
     s.on("connect", () => {
