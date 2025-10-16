@@ -1,6 +1,11 @@
 # Deployment Guide
 
-## Vercel Deployment (Recommended)
+## Current Architecture
+
+- **Frontend**: Deployed on Vercel at `https://for-is-viva.vercel.app`
+- **Backend**: Deployed on Render at `https://google-docs-clone-6gc4.onrender.com` (Port 10000)
+
+## Frontend Deployment (Vercel)
 
 ### Prerequisites
 
@@ -13,7 +18,7 @@
 
    ```bash
    git add .
-   git commit -m "Restructured for Vercel deployment"
+   git commit -m "Updated for Render backend integration"
    git push origin main
    ```
 
@@ -25,7 +30,11 @@
    - Import your repository
    - Click "Deploy"
 
-3. **Done!** Your app will be live at `https://for-is-viva.vercel.app`
+3. **Done!** Your frontend will be live at `https://for-is-viva.vercel.app`
+
+## Backend Deployment (Render)
+
+Your backend is already deployed at `https://google-docs-clone-6gc4.onrender.com`
 
 ### Method 2: Vercel CLI
 
@@ -57,16 +66,18 @@
    npm install
    ```
 
-2. **Start backend server:**
+2. **Start backend server (Port 10000):**
 
    ```bash
    npm run dev:server
    ```
 
-3. **Start frontend (new terminal):**
+3. **Start frontend (new terminal, Port 3000):**
    ```bash
    npm start
    ```
+
+   The frontend will connect to `http://localhost:10000` in development and `https://google-docs-clone-6gc4.onrender.com` in production.
 
 ## Environment Variables
 

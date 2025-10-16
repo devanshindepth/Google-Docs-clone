@@ -23,11 +23,11 @@ export default function TextEditor() {
 
   useEffect(() => {
     const socketUrl = process.env.NODE_ENV === 'production' 
-      ? "https://for-is-viva.vercel.app" 
-      : "http://localhost:3001"
+      ? "https://google-docs-clone-6gc4.onrender.com" 
+      : "http://localhost:10000"
     
     const s = io(socketUrl, {
-      path: process.env.NODE_ENV === 'production' ? '/api/socket' : '/socket.io'
+      path: '/socket.io'
     })
     setSocket(s)
 

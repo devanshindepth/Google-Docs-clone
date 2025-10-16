@@ -1,4 +1,6 @@
-const io = require("socket.io")(3001, {
+const PORT = process.env.PORT || 10000;
+
+const io = require("socket.io")(PORT, {
   cors: {
     origin: ["http://localhost:3000", "https://for-is-viva.vercel.app"],
     methods: ["GET", "POST"],
@@ -52,4 +54,4 @@ function saveDocument(id, data) {
   }
 }
 
-console.log("Server running on port 3001");
+console.log(`Server running on port ${PORT}`);
