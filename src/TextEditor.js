@@ -23,7 +23,7 @@ export default function TextEditor() {
 
   useEffect(() => {
     const socketUrl = process.env.NODE_ENV === 'production' 
-      ? window.location.origin 
+      ? "https://for-is-viva.vercel.app" 
       : "http://localhost:3001"
     
     const s = io(socketUrl, {

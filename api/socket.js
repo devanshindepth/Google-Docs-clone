@@ -14,8 +14,9 @@ export default function handler(req, res) {
       path: '/api/socket',
       addTrailingSlash: false,
       cors: {
-        origin: "*",
-        methods: ["GET", "POST"]
+        origin: ["https://for-is-viva.vercel.app", "http://localhost:3000"],
+        methods: ["GET", "POST"],
+        credentials: true
       }
     })
 

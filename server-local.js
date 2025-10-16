@@ -8,8 +8,9 @@ const defaultValue = ""
 const server = http.createServer()
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000", "https://for-is-viva.vercel.app"],
     methods: ["GET", "POST"],
+    credentials: true
   },
 })
 

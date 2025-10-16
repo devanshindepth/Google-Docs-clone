@@ -25,7 +25,7 @@
    - Import your repository
    - Click "Deploy"
 
-3. **Done!** Your app will be live at `https://your-project-name.vercel.app`
+3. **Done!** Your app will be live at `https://for-is-viva.vercel.app`
 
 ### Method 2: Vercel CLI
 
